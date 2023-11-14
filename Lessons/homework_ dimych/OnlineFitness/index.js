@@ -1,39 +1,39 @@
 let exercises = {
     monday: {
         deadLift: {
-            image: ["mondaydeadLiftimage1.png", "mondaydeadLiftimage2.png", "mondaydeadLiftimage3.png"],
-            first: "First approach with 50 kg x 10 repetitions",
-            second: "Second approach with 40 kg x 15 repetitions",
-            third: "Third approach with 35 kg x 12 repetitions",
-            fourth: "Fourth approach with 35 kg x 12 repetitions",
+            image: ['mondaydeadLiftimage1.png', 'mondaydeadLiftimage2.png', 'mondaydeadLiftimage3.png'],
+            first: 'First approach with 50 kg x 10 repetitions',
+            second: 'Second approach with 40 kg x 15 repetitions',
+            third: 'Third approach with 35 kg x 12 repetitions',
+            fourth: 'Fourth approach with 35 kg x 12 repetitions',
         },
         pullChinUps: {
-            image: ["mondaypullChinUpsimage1.png", "mondaypullChinUpsimage2.png", "mondaypullChinUpsimage3.png"],
-            first: "First approach 10 repetitions",
-            second: "Second approach 15 repetitions",
-            third: "Third approach 12 repetitions",
-            fourth: "Fourth approach 12 repetitions"
+            image: ['mondaypullChinUpsimage1.png', 'mondaypullChinUpsimage2.png', 'mondaypullChinUpsimage3.png'],
+            first: 'First approach 10 repetitions',
+            second: 'Second approach 15 repetitions',
+            third: 'Third approach 12 repetitions',
+            fourth: 'Fourth approach 12 repetitions'
         }
     },
     tuesday: {
         barbellSquats: {
-            image: ["tuesdaybarbellSquatsimage1.png", "tuesdaybarbellSquatsimage2.png", "tuesdaybarbellSquatsimage3.png"],
-            first: "First approach with 50 kg x 10 repetitions",
-            second: "Second approach with 40 kg x 15 repetitions",
-            third: "Third approach with 35 kg x 12 repetitions",
-            fourth: "Fourth approach with 35 kg x 12 repetitions"
+            image: ['tuesdaybarbellSquatsimage1.png', 'tuesdaybarbellSquatsimage2.png', 'tuesdaybarbellSquatsimage3.png'],
+            first: 'First approach with 50 kg x 10 repetitions',
+            second: 'Second approach with 40 kg x 15 repetitions',
+            third: 'Third approach with 35 kg x 12 repetitions',
+            fourth: 'Fourth approach with 35 kg x 12 repetitions'
         },
         dumbbellLunges: {
-            image: ["tuesdaydumbbellLungesimage1.png", "tuesdaydumbbellLungesimage2.png", "tuesdaydumbbellLungesimage3.png"],
-            first: "First approach 8 kg x 10 repetitions",
-            second: "Second approach 8 kg x 15 repetitions",
-            third: "Third approach 7 kg x 12 repetitions",
-            fourth: "Fourth approach 5 kg x 12 repetitions"
+            image: ['tuesdaydumbbellLungesimage1.png', 'tuesdaydumbbellLungesimage2.png', 'tuesdaydumbbellLungesimage3.png'],
+            first: 'First approach 8 kg x 10 repetitions',
+            second: 'Second approach 8 kg x 15 repetitions',
+            third: 'Third approach 7 kg x 12 repetitions',
+            fourth: 'Fourth approach 5 kg x 12 repetitions'
         }
     }
 };
 
-document.write("<h1>", "Exercises", "</h1>");
+document.write('<h1>', 'Exercises', '</h1>');
 
 for (let dayOfclasses in exercises) { // день занятий
 
