@@ -32,24 +32,90 @@ let exercises = {
         }
     }
 };
-// это сам
-document.write('<h1>', 'Exercises', '</h1>');
 
-for (let dayOfclasses in exercises) { // день занятий
+const root = document.querySelector('#root');
 
-    document.write('<div>');
-    document.write('<h2>', dayOfclasses, '</h2>');
+// Заголовок <h1>Exercises</h1> функция
 
-    for (let setOfexercises in exercises[dayOfclasses]) { // упражнение
+function writeHeading(text) {
+    const h1 = document.createElement('h1');
+    h1.innerText = text;
+    root.appendChild(h1);
+}
 
-        document.write('<div>');
-        document.write('<h4>', setOfexercises, '</h4>');
+// текст день занятий <div><h2></h2></div> функция
 
-        for (let anApproach in exercises[dayOfclasses][setOfexercises]) { // подход и повторить
+function writeDayOfclasses(dayOfclasses) {
+    const div = document.createElement('div');
+    const h2 = document.createElement('h2');
 
-            if (anApproach !== 'image') {
+    h2.textContent = dayOfclasses;
 
-                document.write('<p>', exercises[dayOfclasses][setOfexercises][anApproach], '</p>');
+    div.appendChild(h2);
+    root.appendChild(div);
+}
+
+//текст день занятий <div><h4>Упражнение</h4></div> функция
+
+function writesetOfexercises(setOfexercises) {
+    const div = document.createElement('div');
+    const h4 = document.createElement('h4');
+
+    h4.textContent = setOfexercises;
+
+    div.appendChild(h4);
+    root.appendChild(div);
+}
+
+// текст подход и повтор <p>подход и повтор</p> функция
+
+function writeanApproach(textanApproach) {
+    const p = document.createElement('p');
+
+    p.innerText = textanApproach;
+
+    root.appendChild(p);
+}
+
+//рисуем картинки после текста подход и повтор <p>подход и повтор</p> функция
+
+function writeImages(images) {
+        const div = document.createElement('div');
+
+    for (let i = 0; i < images.length; i++) {
+        const img = document.createElement('img');
+
+        img.src = images[i];
+        img.alt = 'Image ' + (i + 1);
+
+        div.appendChild(img);
+    }
+    root.appendChild(div);
+}
+
+// Заголовок <h1>Exercises</h1> вызов функции
+
+writeHeading('Exercises');
+
+for (let dayOfclasses in exercises) {// текст день занятий
+
+    //текст день занятий <div><h2>День</h2></div> вызов функции
+
+    writeDayOfclasses(dayOfclasses);
+
+    for (let setOfexercises in exercises[dayOfclasses]) {// текст упражнение
+
+        //текст упражнение <div><h4>Упражнение</h4></div> вызов функции
+
+        writesetOfexercises(setOfexercises);
+
+        for (let anApproach in exercises[dayOfclasses][setOfexercises]) {// текст подход и повтор
+
+            if (anApproach !== 'image') {// если не картинка выводим текст подход и повтор
+
+            // текст подход и повтор вызов функции
+
+            writeanApproach(exercises[dayOfclasses][setOfexercises][anApproach]);
 
             };
 
@@ -57,82 +123,10 @@ for (let dayOfclasses in exercises) { // день занятий
 
         let images = exercises[dayOfclasses][setOfexercises].image;
 
-        for (let i = 0; i < images.length; i++) {
-            document.write('<img src="' + images[i] + '" alt="Image ' + (i + 1) + '">'); // картинки
-        };
-        document.write('</div>');
+        //рисуем картинки после текста подход и повтор <p>подход и повтор</p> вызов функция
+
+        writeImages(images);
+
     };
-    document.write('</div>');
+
 }
-
-// это гптчат, функции зажал
-
-/*
-const w = (t) => document.write(t);
-
-w('<h1>Exercises</h1>');
-
-for (let [dayOfClasses, sets] of Object.entries(exercises)) {
-  w(`<div><h2>${dayOfClasses}</h2>`);
-
-  for (let [setOfExercises, details] of Object.entries(sets)) {
-    w(`<div><h4>${setOfExercises}</h4>`);
-    Object.values(details).filter((key) => key !== 'image').forEach((approach) => w(`<p>${approach}</p>`));
-    details.image.forEach((image, index) => w(`<img src="${image}" alt="Image ${index + 1}">`));
-    w('</div>');
-  }
-
-  w('</div>');
-}
-*/
-// это гптчат, функции
-/*
-function writeHeading(text) {
-  document.write('<h1>' + text + '</h1>');
-}
-
-function writeDayOfClasses(dayOfClasses) {
-  document.write('<div>');
-  document.write('<h2>' + dayOfClasses + '</h2>');
-}
-
-function writeExercise(setOfExercises) {
-  document.write('<div>');
-  document.write('<h4>' + setOfExercises + '</h4>');
-}
-
-function writeApproach(approach) {
-  if (approach !== 'image') {
-    document.write('<p>' + approach + '</p>');
-  }
-}
-
-function writeImages(images) {
-  for (let i = 0; i < images.length; i++) {
-    document.write(
-      '<img src="' + images[i] + '" alt="Image ' + (i + 1) + '">'
-    );
-  }
-}
-
-writeHeading('Exercises');
-
-for (let dayOfClasses in exercises) {
-  writeDayOfClasses(dayOfClasses);
-
-  for (let setOfExercises in exercises[dayOfClasses]) {
-    writeExercise(setOfExercises);
-
-    for (let anApproach in exercises[dayOfClasses][setOfExercises]) {
-      writeApproach(exercises[dayOfClasses][setOfExercises][anApproach]);
-    }
-
-    let images = exercises[dayOfClasses][setOfExercises].image;
-    writeImages(images);
-
-    document.write('</div>');
-  }
-
-  document.write('</div>');
-}
-*/
